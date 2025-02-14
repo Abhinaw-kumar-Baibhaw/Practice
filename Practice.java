@@ -91,6 +91,58 @@ public class Practice {
         return arr;
     }
 
+
+    public int findMin() {
+        int[] nums = {3,4,5,1,2};
+        int low = 0;
+        int high = nums.length-1;
+        int ans = Integer.MAX_VALUE;
+        while(low<=high){
+          int  mid = low + (high - low)/2;
+            if(nums[mid]>=nums[low]){
+              ans = Math.min(ans,nums[low]);
+              low = mid+1;
+            }
+            else{
+                high = mid -1;
+               ans = Math.min(ans,nums[mid]);
+            }
+        }
+        return ans;
+    }
+
+
+    public int singleNonDuplicate() {
+        int[] nums = {1,1,2,3,3,4,4,8,8};
+        if(nums.length==1){
+           return nums[0];
+        }
+        if(nums[0]!=nums[1]){
+            return nums[0];
+        }
+        if(nums[nums.length-1]!=nums[nums.length-2]){
+            return nums[nums.length-1];
+        }
+        int start = 1;
+        int end = nums.length-2;
+        while(start<=end){
+            int mid = start +(end - start)/2;
+            if(nums[mid]!=nums[mid-1] && nums[mid]!=nums[mid+1])
+            {
+                return nums[mid];
+            }
+            else if((mid%2==1 && nums[mid]==nums[mid-1])
+                                    ||(mid%2==0 && nums[mid]==nums[mid+1])){
+                start = mid +1;
+                
+            }
+            else{
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         Practice b = new Practice();
        int nums[] = {-1,0,3,5,9,12};
@@ -111,8 +163,11 @@ public class Practice {
     int[] res2 = b.searchRange();
     System.out.println(Arrays.toString(res2));
 
+     int ans = b.findMin();
+     System.out.println(ans);
 
-
+     int ans1 = b.singleNonDuplicate();
+     System.out.println(ans1);
 
 }
 }
