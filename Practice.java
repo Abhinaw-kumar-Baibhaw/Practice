@@ -142,7 +142,6 @@ public class Practice {
         }
         return -1;
     }
-
     public static void main(String[] args) {
         Practice b = new Practice();
        int nums[] = {-1,0,3,5,9,12};
