@@ -26,7 +26,7 @@ public class PalindromeLL {
         return head;
     }
     public static void main(String[] args) {
-        int[] arr = {1,2,1};
+        int[] arr = {1,2,3,2,1};
        Node head = convertToLL(arr);
        while(head!=null){
         System.out.print(head.data+" ");
