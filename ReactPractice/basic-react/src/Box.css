@@ -1,0 +1,9 @@
+.product{
+    border:2px solid rgb(4, 4, 4);
+    width: 200px;
+    height: 200px;
+    margin:auto;
+    margin-top: 10px;
+    font-weight: 800;
+}
+
