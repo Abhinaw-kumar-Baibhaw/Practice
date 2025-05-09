@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import LudoBoard from './LudoBoard'
-import Todo from './Todo'
+import { useSelector, useDispatch } from 'react-redux';
+import './App.css';
 
 function App() {
+  const count = useSelector((state) => state.count);     // ✅ Access count from Redux store
+  const dispatch = useDispatch();                         // ✅ Get dispatch function
+
   return (
-    <>
-     {/* <LudoBoard /> */}
-     <Todo />
-    </>
-  )
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>Counter: {count}</h1>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>+</button> &nbsp; &nbsp;
+      <button onClick={() => dispatch({ type: 'DECREMENT' })}>-</button>
+    </div>
+  );
 }
 
-export default App
+export default App;

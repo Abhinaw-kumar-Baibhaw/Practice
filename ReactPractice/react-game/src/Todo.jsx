@@ -10,7 +10,6 @@ export default function Todo(){
     let updateEvent = (event)=>{
         setNewTodos(event.target.value);
     }
-
     let deleteTodo = (id)=>{
       let copy = todos.filter((tdo)=>tdo.id != id)
          setTodos(copy)
