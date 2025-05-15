@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 
 function App() {
-  const count = useSelector((state) => state.count);     // ✅ Access count from Redux store
-  const dispatch = useDispatch();                         // ✅ Get dispatch function
+  const count = useSelector((state) => state.count);    
+  const dispatch = useDispatch();                        
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
