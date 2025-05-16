@@ -24,7 +24,7 @@ public class Sort012 {
       }
       return nums;
     }
-    
+
     public static void main(String[] args) {
         int[] nums = {2,0,2,1,1,0};
         int[] rs = sortColors(nums);
